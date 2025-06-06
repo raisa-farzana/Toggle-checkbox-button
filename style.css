@@ -14,3 +14,38 @@ body{
     justify-content: center;
     background: #bebebe;
 }
+
+.holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: rgb(136, 136, 136); */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px #ffffffb3, 10px 10px 10px #0000004d,
+    inset 8px 8px 15px #ffffff2b,
+    inset  10px 10px 10px #b8b8b8b3;
+}
+.iconText i{
+    margin-right: 8px;
+}
+
+.iconText {
+    width: 200px;
+}
+input{
+    display: none;
+}
+
+input+label{
+    position: relative;
+    display: inline-block;
+    
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: inset -8px -8px 15px #ffffff99,
+    inset 10px 10px 10px #00000040;
+}
+
