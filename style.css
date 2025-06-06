@@ -15,6 +15,70 @@ body{
     background: #bebebe;
     /* background: linear-gradient(135deg, #f0f0f0, #dcdcdc); */
 }
+/* Custom cursor circle */
+/* .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #4d94ff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, border 0.2s ease;
+
+} */
+
+/* .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #70eb4f, #4d94ff, #ff4dd2, #ffcc00);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    transition: transform 0.2s ease;
+} */
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(
+        from 0deg,
+        #70eb4f,
+        #4d94ff,
+        #ff4dd2,
+        #ffcc00,
+        #70eb4f
+    );
+    mask: radial-gradient(transparent 40%, black 41%);
+    -webkit-mask: radial-gradient(transparent 40%, black 41%);
+    animation: rotateBorder 2s linear infinite;
+}
+
+
+/* Optional: Enlarge on click */
+body:active .cursor {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #70eb4f;
+}
 .mainContainer{
     display: flex;
     flex-wrap: wrap;
@@ -88,3 +152,23 @@ input:checked + label::before{
     box-shadow: -3px -3px 5px #ffffffb3,
      3px 3px 5px #00b33c;
 }
+/* @keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+ @keyframes rotateBorder {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
